@@ -1,6 +1,7 @@
 class Till
 
   BILL = 0
+  TAX = 8.64
 
   attr_reader :items, :total
 
@@ -15,5 +16,9 @@ class Till
 
   def calculate_total(amount)
     @total += amount
+  end
+
+  def tax
+    TAX
   end
 end
