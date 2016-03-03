@@ -1,5 +1,8 @@
 Till tech test
 ==============
+[![Build Status](https://travis-ci.org/richgeog/till_tech_test.svg?branch=master)](https://travis-ci.org/richgeog/till_tech_test)
+[![Code Climate](https://codeclimate.com/github/richgeog/till_tech_test/badges/gpa.svg)](https://codeclimate.com/github/richgeog/till_tech_test)
+[![Test Coverage](https://codeclimate.com/github/richgeog/till_tech_test/badges/coverage.svg)](https://codeclimate.com/github/richgeog/till_tech_test/coverage)
 
 *Instructions*: Please fork this repo and submit a pull request once you've finished. Then prepare for code review!
 
