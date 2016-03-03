@@ -10,4 +10,8 @@ describe Till do
     subject.calculate_total(3.65)
     expect(subject.total).to eq (3.65)
   end
+
+  it "starts the bill total at 0" do
+    expect(subject.total).to eq (0)
+  end
 end
