@@ -10,15 +10,16 @@ class Till
     @total = BILL
   end
 
-  def add_item(product)
+  def add_item(product, amount)
     items << product
-  end
-
-  def calculate_total(amount)
-    @total += amount
+    (@total += amount).round(2)
   end
 
   def tax_amount
     (@total * TAX).round(2)
+  end
+
+  def calculate_total
+    (@total += tax_amount).round(2)
   end
 end
