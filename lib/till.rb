@@ -17,8 +17,4 @@ class Till
   def calculate_total(amount)
     @total += amount
   end
-
-  def tax
-    TAX
-  end
 end
