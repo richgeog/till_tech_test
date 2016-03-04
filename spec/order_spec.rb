@@ -1,6 +1,6 @@
-require 'till'
+require 'order'
 
-describe Till do
+describe Order do
   it "starts with no items" do
     expect(subject.items).to eq([])
   end

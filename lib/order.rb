@@ -1,4 +1,4 @@
-class Till
+class Order
 
   BILL = 0
   TAX = 0.0864
