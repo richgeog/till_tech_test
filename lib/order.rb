@@ -10,16 +10,7 @@ class Order
     @total = BILL
   end
 
-  def add_item(product, amount)
+  def add_item(product)
     items << product
-    (@total += amount).round(2)
-  end
-
-  def tax_amount
-    (@total * TAX).round(2)
-  end
-
-  def calculate_total
-    (@total += tax_amount).round(2)
   end
 end
