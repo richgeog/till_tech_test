@@ -14,4 +14,10 @@ describe Order do
     subject.add_item('Cafe Latte')
     expect(subject.items).to eq(['Coffee', 'Cafe Latte'])
   end
+
+  it "creates a menu" do
+    subject.menu('Coffee' => 3.65)
+    subject.menu('Cafe Latte' => 3.99)
+    expect(subject.menu).to eq('Coffee' => 3.65 ,'Cafe Latte' => 3.99)
+  end
 end
