@@ -16,8 +16,8 @@ describe Order do
   end
 
   it "creates a menu" do
-    subject.menu('Coffee' => 3.65)
-    subject.menu('Cafe Latte' => 3.99)
+    subject.prices('Coffee' => 3.65)
+    subject.prices('Cafe Latte' => 3.99)
     expect(subject.menu).to eq('Coffee' => 3.65 ,'Cafe Latte' => 3.99)
   end
 end
