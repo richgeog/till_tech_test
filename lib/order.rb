@@ -9,6 +9,7 @@ class Order
     @items = []
     @total = BILL
     @menu = {}
+    @subtotal = 0
   end
 
   def add_item(product)
@@ -20,4 +21,10 @@ class Order
       @menu[product] = price
     end
   end
+
+  def subtotal
+    @subtotal = @menu.inject(0) { |product, price| product + price.last }
+    @subtotal.round(2)
+  end
+
 end
