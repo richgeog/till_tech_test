@@ -39,6 +39,6 @@ describe Order do
     subject.prices('Coffee' => 3.65)
     subject.prices('Cafe Latte' => 3.99)
     expect(subject.subtotal).to eq(7.64)
-    expect(subject.tax_amount).to eq(0.61)
+    expect(subject.tax_amount).to eq(0.66)
   end
 end
