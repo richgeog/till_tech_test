@@ -3,16 +3,21 @@ class Order
   BILL = 0
   TAX = 0.0864
 
-  attr_reader :items, :total
+  attr_reader :items, :total, :menu
 
   def initialize
     @items = []
     @total = BILL
+    @menu = {}
   end
 
   def add_item(product)
     items << product
   end
 
-
+  def prices(products)
+    products.each do |product, price|
+      @menu[product] = price
+    end
+  end
 end
