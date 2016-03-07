@@ -15,6 +15,10 @@ describe Order do
     expect(subject.items).to eq(['Coffee', 'Cafe Latte'])
   end
 
+  it 'has an empty menu at the start' do
+    expect(subject.menu).to eq({})
+  end
+
   it "creates a menu" do
     subject.prices('Coffee' => 3.65)
     subject.prices('Cafe Latte' => 3.99)
