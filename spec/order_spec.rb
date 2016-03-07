@@ -25,6 +25,10 @@ describe Order do
     expect(subject.menu).to eq('Coffee' => 3.65 ,'Cafe Latte' => 3.99)
   end
 
+  it "starts subtotal at 0" do
+    expect(subject.subtotal).to eq(0)
+  end
+
   it "creates a subtotal" do
     subject.prices('Coffee' => 3.65)
     subject.prices('Cafe Latte' => 3.99)
