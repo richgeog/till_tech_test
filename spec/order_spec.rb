@@ -55,11 +55,9 @@ describe Order do
     subject.add_item('Coffee')
     subject.add_item('Cafe Latte')
     subject.prices('Coffee' => 3.65)
-    subject.prices('Cafe Latte' => 3.99)
-    expect(subject.print_receipt).to eq('
-                                        ["Coffee", "Cafe Latte"]
-                                        "Tax: 0.66"
-                                        "Total: 8.30"
-                                        ')
+    subject.prices('Cafe Latte' => 3.98)
+    expect(subject.print_receipt).to eq({:items=>["Coffee", "Cafe Latte"],
+                                         :tax=>"Tax: 0.66",
+                                         :total=>"Total: 8.29"})
   end
 end
