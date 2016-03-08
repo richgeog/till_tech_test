@@ -50,4 +50,16 @@ describe Order do
     expect(subject.items).to eq(['Coffee', 'Cafe Latte'])
     expect(subject.total_amount).to eq(8.30)
   end
+
+  it 'prints the receipt' do
+    subject.add_item('Coffee')
+    subject.add_item('Cafe Latte')
+    subject.prices('Coffee' => 3.65)
+    subject.prices('Cafe Latte' => 3.99)
+    expect(subject.print_receipt).to eq('
+                                        ["Coffee", "Cafe Latte"]
+                                        "Tax: 0.66"
+                                        "Total: 8.30"
+                                        ')
+  end
 end
