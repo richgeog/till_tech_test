@@ -41,4 +41,13 @@ describe Order do
     expect(subject.subtotal).to eq(7.64)
     expect(subject.tax_amount).to eq(0.66)
   end
+
+  it "calculates the total bill" do
+    subject.add_item('Coffee')
+    subject.add_item('Cafe Latte')
+    subject.prices('Coffee' => 3.65)
+    subject.prices('Cafe Latte' => 3.99)
+    expect(subject.items).to eq(['Coffee', 'Cafe Latte'])
+    expect(subject.total_amount).to eq(8.30)
+  end
 end

@@ -9,7 +9,6 @@ class Order
     @items = []
     @total = BILL
     @menu = {}
-    # @subtotal = 0
   end
 
   def add_item(product)
@@ -28,5 +27,9 @@ class Order
 
   def tax_amount
     (subtotal * TAX).round(2)
+  end
+
+  def total_amount
+    @total = (subtotal + tax_amount).round(2)
   end
 end
