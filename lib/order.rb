@@ -5,7 +5,7 @@ class Order
   BILL = 0
   TAX_RATE = 0.0864
 
-  attr_reader :items, :total, :menu, :tax
+  attr_reader :items, :total, :menu
 
   def initialize
     @items = []
@@ -41,5 +41,9 @@ class Order
       tax: "Tax: #{tax_amount}",
       total: "Total: #{total_amount}"
     }
+  end
+
+  def payment(money)
+    @cash = money
   end
 end

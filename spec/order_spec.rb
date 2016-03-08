@@ -1,63 +1,70 @@
 require 'order'
 
 describe Order do
+
+  subject(:order) { described_class.new }
+
   it "starts with no items" do
-    expect(subject.items).to eq([])
+    expect(order.items).to eq([])
   end
 
   it "starts the bill total at 0" do
-    expect(subject.total).to eq(0)
+    expect(order.total).to eq(0)
   end
 
   it "adds items" do
-    subject.add_item('Coffee')
-    subject.add_item('Cafe Latte')
-    expect(subject.items).to eq(['Coffee', 'Cafe Latte'])
+    order.add_item('Coffee')
+    order.add_item('Cafe Latte')
+    expect(order.items).to eq(['Coffee', 'Cafe Latte'])
   end
 
   it 'has an empty menu at the start' do
-    expect(subject.menu).to eq({})
+    expect(order.menu).to eq({})
   end
 
   it "creates a menu" do
-    subject.prices('Coffee' => 3.65)
-    subject.prices('Cafe Latte' => 3.99)
-    expect(subject.menu).to eq('Coffee' => 3.65 ,'Cafe Latte' => 3.99)
+    order.prices('Coffee' => 3.65)
+    order.prices('Cafe Latte' => 3.99)
+    expect(order.menu).to eq('Coffee' => 3.65 ,'Cafe Latte' => 3.99)
   end
 
   it "starts subtotal at 0" do
-    expect(subject.subtotal).to eq(0)
+    expect(order.subtotal).to eq(0)
   end
 
   it "creates a subtotal" do
-    subject.prices('Coffee' => 3.65)
-    subject.prices('Cafe Latte' => 3.99)
-    expect(subject.subtotal).to eq(7.64)
+    order.prices('Coffee' => 3.65)
+    order.prices('Cafe Latte' => 3.99)
+    expect(order.subtotal).to eq(7.64)
   end
 
   it "calculates the amount of tax" do
-    subject.prices('Coffee' => 3.65)
-    subject.prices('Cafe Latte' => 3.99)
-    expect(subject.subtotal).to eq(7.64)
-    expect(subject.tax_amount).to eq(0.66)
+    order.prices('Coffee' => 3.65)
+    order.prices('Cafe Latte' => 3.99)
+    expect(order.subtotal).to eq(7.64)
+    expect(order.tax_amount).to eq(0.66)
   end
 
   it "calculates the total bill" do
-    subject.add_item('Coffee')
-    subject.add_item('Cafe Latte')
-    subject.prices('Coffee' => 3.65)
-    subject.prices('Cafe Latte' => 3.99)
-    expect(subject.items).to eq(['Coffee', 'Cafe Latte'])
-    expect(subject.total_amount).to eq(8.30)
+    order.add_item('Coffee')
+    order.add_item('Cafe Latte')
+    order.prices('Coffee' => 3.65)
+    order.prices('Cafe Latte' => 3.99)
+    expect(order.items).to eq(['Coffee', 'Cafe Latte'])
+    expect(order.total_amount).to eq(8.30)
   end
 
   it 'prints the receipt' do
-    subject.add_item('Coffee')
-    subject.add_item('Cafe Latte')
-    subject.prices('Coffee' => 3.65)
-    subject.prices('Cafe Latte' => 3.98)
-    expect(subject.print_receipt).to eq({:items=>["Coffee", "Cafe Latte"],
+    order.add_item('Coffee')
+    order.add_item('Cafe Latte')
+    order.prices('Coffee' => 3.65)
+    order.prices('Cafe Latte' => 3.98)
+    expect(order.print_receipt).to eq({:items=>["Coffee", "Cafe Latte"],
                                          :tax=>"Tax: 0.66",
                                          :total=>"Total: 8.29"})
+  end
+
+  it "takes payment" do
+    expect(order.payment(20)).to eq(20)
   end
 end
