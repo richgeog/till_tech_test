@@ -25,6 +25,7 @@ GEM
       json (~> 1.8)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
+    timecop (0.8.0)
 
 PLATFORMS
   ruby
@@ -33,6 +34,7 @@ DEPENDENCIES
   byebug
   codeclimate-test-reporter
   rspec
+  timecop
 
 BUNDLED WITH
    1.10.6
