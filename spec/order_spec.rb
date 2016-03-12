@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'order'
-require 'Timecop'
+# require 'Timecop'
 
 describe Order do
   subject(:order) { described_class.new('Sam', 1) }
