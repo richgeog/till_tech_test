@@ -31,7 +31,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug (= 8.2.2)
+  byebug
   codeclimate-test-reporter
   rspec
   timecop
